@@ -12,7 +12,7 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-  pkill -USR1 sxhkd; bspc wm -r
+  pkill -USR1 sxhkd;sh /home/aiden/Project/dotfiles/sync.sh 
 
 #
 # bspwm hotkeys
