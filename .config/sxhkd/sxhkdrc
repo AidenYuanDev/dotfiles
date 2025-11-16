@@ -143,3 +143,18 @@ F1
 
 F3
     Snipaste paste --clipboard
+
+# Rog ctrl 
+
+# Light
+alt + F2
+  asusctl -p
+
+alt + F3
+  asusctl -n
+
+XF86AudioLowerVolume
+  pamixer -d 5
+
+XF86AudioRaiseVolume
+  pamixer -i 5
