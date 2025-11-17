@@ -3,7 +3,7 @@ import = ["~/.config/alacritty/alacritty-theme/themes/tokyo_night_storm.toml"]
 
 [font]
 normal = { family = "Hack Nerd Font Mono", style = "Regular" }
-size = 16
+size = 10
 
 [window]
 
