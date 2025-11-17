@@ -1,5 +1,7 @@
 #! /bin/sh
 
+xrandr --output DP-2 --mode 2560x1600 --rate 240
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 pgrep -x snixembed > /dev/null || snixembed -p 9999 &
