@@ -1,42 +1,31 @@
 #!/bin/bash
 
-SOURCE_DIR="$HOME/.config"
-DEST_DIR="$(realpath $(dirname "$0"))/.config"
+SOURCE_DIR="$HOME"
+DEST_DIR="$(realpath "$(dirname "$0")")"
 
-echo "${DEST_DIR}"
+BACKUP_ITEMS=(
+    ".config/alacritty"
+    ".config/bspwm"
+    ".config/picom"
+    ".config/polybar"
+    ".config/rofi"
+    ".config/sxhkd"
+    ".zshrc"
+)
 
-if [ ! -d "$SOURCE_DIR" ]; then
-  echo -e "Creating destination directory: ${SOURCE_DIR}"
-  mkdir -p ${SOURCE_DIR}
-fi
-
-if [ ! -d "$DEST_DIR" ]; then
-  echo -e "Creating destination directory: $DEST_DIR"
-  mkdir -p ${DEST_DIR}
-fi
-
-CONFIG_DIRS=("alacritty" "bspwm" "picom" "polybar" "rofi" "sxhkd")
-
-echo -e "Copying configuration directories..."
-echo ""
-
-for dir in "${CONFIG_DIRS[@]}"; do
-    if [ -d "$SOURCE_DIR/$dir" ]; then
-        echo -e "Copying $dir..."
-        
-        if [ -d "$DEST_DIR/$dir" ]; then
-            rm -rf "$DEST_DIR/$dir"
-        fi
-        
-        # Copy the directory
-        cp -r "$SOURCE_DIR/$dir" "$DEST_DIR/"
-        echo -e "  ✓ $dir copied successfully"
+for item in "${BACKUP_ITEMS[@]}"; do
+    src="$SOURCE_DIR/$item"
+    dest="$DEST_DIR/$item"
+    
+    if [ -e "$src" ]; then
+        echo "  ✓ Copying: $item"
+        mkdir -p "$(dirname "$dest")"
+        rm -rf "$dest"
+        cp -r "$src" "$dest"
     else
-        echo -e "⚠ Warning: $SOURCE_DIR/$dir not found, skipping"
+        echo "  ⚠ Not found: $item"
     fi
 done
 
 echo ""
-echo -e "✓ Configuration files copied successfully!"
-echo ""
-echo "Copied to: $DEST_DIR"
+echo "✓ Done!"
