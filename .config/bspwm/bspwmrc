@@ -1,39 +1,55 @@
 #! /bin/sh
 
-xrandr --output DP-2 --mode 2560x1600 --rate 240
-
+# ============================================================
+# Core Settings
+# ============================================================
+# Hotkey daemon
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-pgrep -x snixembed > /dev/null || snixembed -p 9999 &
+# Display settings
+xrandr --output DP-2 --mode 2560x1600 --rate 240 &
 
-pgrep -x picom > /dev/null || picom --config ~/.config/picom/picom.conf & 
-
+# Desktop workspaces
 bspc monitor -d I II III IV V VI VII VIII IX X
 
+# System tray 
+pgrep -x snixembed > /dev/null || snixembed -p 9999 &
+
+# Status bar
 sh ~/.config/polybar/launch.sh &
 
+# ============================================================
+# Window rules 
+# ============================================================
+
+# hide windows rules
+bspc rule -a v2rayN hidden=on focus=off
+
+# ============================================================
+#  User Applications
+# ============================================================
 pgrep -x fcitx5 > /dev/null || fcitx5 &
-
 pgrep -x v2rayN > /dev/null || v2rayn &
-
 pgrep -x sunshine > /dev/null || sunshine &
-
 pgrep -x Snipaste > /dev/null || Snipaste &
+pgrep -x kdeconnectd > /dev/null || kdeconnectd &
 
-# Background
-feh --bg-scale ~/Pictures/wallpaper/girl_glance_wreath_887235_300x168.jpg
-# Number keyboard
-numlockx on
 
+# ============================================================
+# Window Beautification 
+# ============================================================
+# Compositor (transparency, shadows, animations)
+pgrep -x picom > /dev/null || picom --config ~/.config/picom/picom.conf &
+
+# Wallpaper
+feh --bg-scale ~/Pictures/wallpaper/girl_glance_wreath_887235_300x168.jpg &
+
+# Enable numlock
+numlockx on &
+
+# Window manager configuration
 bspc config border_width         2
 bspc config window_gap          12
-
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
