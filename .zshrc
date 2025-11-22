@@ -15,8 +15,9 @@ export CMAKE_BUILD_PARALLEL_LEVEL=$(nproc)
 alias make='make -j$(nproc)'
 
 cmake() {
-  if [[ $# -eq 1 && "$1" == ".." ]]; then
-    command cmake -G Ninja -DCMAKE_COLOR_DIAGNOSTICS=ON -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$@"
+  if [[ "$1" == ".." ]]; then
+    shift
+    command cmake .. -G Ninja -DCMAKE_COLOR_DIAGNOSTICS=ON -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$@"
   else
     command cmake "$@"
   fi
