@@ -30,7 +30,6 @@ bspc rule -a v2rayN hidden=on focus=off
 # ============================================================
 pgrep -x fcitx5 > /dev/null || fcitx5 &
 pgrep -x v2rayN > /dev/null || v2rayn &
-pgrep -x sunshine > /dev/null || sunshine &
 pgrep -x Snipaste > /dev/null || Snipaste &
 pgrep -x kdeconnectd > /dev/null || kdeconnectd &
 
@@ -53,3 +52,5 @@ bspc config window_gap          12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+i3lock -i /home/aiden/Pictures/wallpaper/girl_glance_wreath_887235_300x168.jpg --scale
