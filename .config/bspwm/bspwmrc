@@ -23,7 +23,7 @@ sh ~/.config/polybar/launch.sh &
 # ============================================================
 
 # hide windows rules
-bspc rule -a v2rayN hidden=on focus=off
+# bspc rule -a v2rayN hidden=on focus=off
 
 # ============================================================
 #  User Applications
@@ -31,7 +31,7 @@ bspc rule -a v2rayN hidden=on focus=off
 pgrep -x fcitx5 > /dev/null || fcitx5 &
 pgrep -x v2rayN > /dev/null || v2rayn &
 pgrep -x Snipaste > /dev/null || Snipaste &
-pgrep -x kdeconnectd > /dev/null || kdeconnectd &
+pgrep -x kdeconnect-indicator > /dev/null || kdeconnect-indicator &
 
 
 # ============================================================
@@ -53,4 +53,4 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-i3lock -i /home/aiden/Pictures/wallpaper/girl_glance_wreath_887235_300x168.jpg --scale
+sh /home/aiden/.config/sxhkd/scripts/lockscreen.sh

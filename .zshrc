@@ -12,6 +12,14 @@ export CXX=clang++
 
 # Cmake config
 export CMAKE_BUILD_PARALLEL_LEVEL=$(nproc)
+
+# Wow
+# wow server azerothcore
+export AC_CODE_DIR=$HOME/Project/azerothcore
+
+# wow client 
+export WOW_CLIENT_DIR=$HOME/Project/Wow
+
 alias make='make -j$(nproc)'
 
 cmake() {
