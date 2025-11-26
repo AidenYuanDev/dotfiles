@@ -10,7 +10,9 @@ BACKUP_ITEMS=(
     ".config/polybar"
     ".config/rofi"
     ".config/sxhkd"
+    ".config/fcitx5/conf/classicui.conf"
     ".zshrc"
+    ".local/share/fcitx5"
 )
 
 for item in "${BACKUP_ITEMS[@]}"; do
