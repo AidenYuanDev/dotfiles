@@ -121,9 +121,9 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # google
-#
 super + shift + b 
-  google-chrome-stable --proxy-server="http://127.0.0.1:10808"&  
+  google-chrome-stable  
+  # google-chrome-stable --proxy-server="http://127.0.0.1:10808"&  
   
 # i3lock
 super + shift + x 
