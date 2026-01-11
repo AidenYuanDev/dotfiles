@@ -14,6 +14,7 @@ BACKUP_ITEMS=(
     ".zshrc"
     ".local/share/fcitx5"
     ".config/scripts"
+    ".Xresources"
 )
 
 for item in "${BACKUP_ITEMS[@]}"; do
