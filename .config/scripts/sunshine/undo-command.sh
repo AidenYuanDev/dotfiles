@@ -6,11 +6,6 @@ xrandr --output DP-2 --brightness 1 --primary
 xrandr --output DP-0 --brightness 0
 
 # ============================================================
-# Polybar settings
-# ============================================================
-sh ~/.config/polybar/launch.sh &
-
-# ============================================================
 # Keyboard lighting settings
 # ============================================================
 asusctl -k high
@@ -25,3 +20,13 @@ feh --bg-scale ~/Pictures/wallpaper/girl_glance_wreath_887235_300x168.jpg
 # ============================================================
 read -r w h x y < <(xrandr --query | grep "^DP-2" | grep -oP '\d+x\d+\+\d+\+\d+' | tr 'x+' ' ')
 xdotool mousemove $((x + w/2)) $((y + h/2))
+
+# ============================================================
+# Polybar settings
+# ============================================================
+sh ~/.config/polybar/launch.sh &
+
+# ============================================================
+# Lock screen
+# ============================================================
+i3lock -i /home/aiden/Pictures/wallpaper/girl_glance_wreath_887235_300x168.jpg --scale

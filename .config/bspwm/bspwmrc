@@ -18,7 +18,7 @@ bspc monitor DP-0 -d I II III IV V
 pgrep -x snixembed >/dev/null || snixembed -p 9999 &
 
 # Status bar
-sh ~/.config/polybar/launch.sh &
+sh ~/.config/polybar/launch.sh 
 
 # Subshine
 xhost +SI:localuser:aide
