@@ -1,4 +1,9 @@
 #!/bin/bash
+# ============================================================
+# Resolution settings
+# ============================================================
+xrandr --output DP-0 --mode ${SUNSHINE_CLIENT_WIDTH}x${SUNSHINE_CLIENT_HEIGHT} --rate ${SUNSHINE_CLIENT_FPS} --primary
+bspc monitor DP-0 -d I II III IV V
 
 # ============================================================
 # Close all windows on the current monitor 
@@ -6,14 +11,8 @@
 for node in $(bspc query -N -m DP-2); do
     bspc node "$node" --close
 done
-bspc monitor DP-2 --remove
 xrandr --output DP-2 --off
-
-# ============================================================
-# Resolution settings
-# ============================================================
-xrandr --output DP-0 --mode ${SUNSHINE_CLIENT_WIDTH}x${SUNSHINE_CLIENT_HEIGHT} --rate ${SUNSHINE_CLIENT_FPS} --primary
-bspc monitor DP-0 -d I II III IV V
+bspc monitor DP-2 --remove
 
 # ============================================================
 # Keyboard lighting settings
