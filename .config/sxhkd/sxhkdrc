@@ -11,7 +11,7 @@ super + @space
 	dmenu_run
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + shift + Escape
   pkill -USR1 sxhkd;sh /home/aiden/Project/dotfiles/sync.sh 
 
 #
@@ -138,10 +138,10 @@ super + alt + b
     rofi-bluetooth -theme ~/.config/rofi/launchers/type-7/style-5.rasi -location 0
 
 # Snipaste
-F1
+ctrl + super + c
     Snipaste snip
 
-F3
+ctrl + super + v
     Snipaste paste --clipboard
 
 # Rog ctrl 

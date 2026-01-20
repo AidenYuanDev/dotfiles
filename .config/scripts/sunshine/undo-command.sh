@@ -1,9 +1,18 @@
 #!/bin/bash
 # ============================================================
+# Close all windows on the current monitor 
+# ============================================================
+for node in $(bspc query -N -m DP-0); do
+    bspc node "$node" --close
+done
+bspc monitor DP-0 --remove
+xrandr --output DP-0 --off
+
+# ============================================================
 # Resolution settings
 # ============================================================
-xrandr --output DP-2 --brightness 1 --primary
-xrandr --output DP-0 --brightness 0
+xrandr --output DP-2 --mode 2560x1600 --rate 240 --primary
+bspc monitor DP-2 -d I II III IV V
 
 # ============================================================
 # Keyboard lighting settings
