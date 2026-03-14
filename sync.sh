@@ -5,6 +5,7 @@ DEST_DIR="$(realpath "$(dirname "$0")")"
 
 BACKUP_ITEMS=(
     ".config/alacritty"
+    ".config/kitty"
     ".config/bspwm"
     ".config/picom"
     ".config/polybar"

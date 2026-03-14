@@ -17,7 +17,7 @@ bspc monitor DP-0 --remove
 # ============================================================
 # Keyboard lighting settings
 # ============================================================
-asusctl -k high
+asusctl leds set off 
 
 # ===========================================================
 # Wallpaper settings

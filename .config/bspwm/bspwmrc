@@ -53,7 +53,7 @@ bspc config gapless_monocle false
 # ============================================================
 # Keyboard lighting settings
 # ============================================================
-asusctl -k high 
+asusctl leds set off
 
 # ============================================================
 # Lock screen
