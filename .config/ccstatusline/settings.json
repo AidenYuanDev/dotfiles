@@ -1,0 +1,63 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "fd945c2e-5a7e-43bd-8f30-85dd39065caa",
+        "type": "weekly-usage",
+        "color": "cyan",
+        "backgroundColor": "bgGreen"
+      },
+      {
+        "id": "589df7af-7bbc-44ef-8fd7-04bf50cd5d8b",
+        "type": "weekly-reset-timer",
+        "backgroundColor": "bgBlue"
+      },
+      {
+        "id": "b6dde094-0c57-41b8-8856-bb53c5399256",
+        "type": "git-branch"
+      }
+    ],
+    [],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "defaultPadding": " ",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": true,
+    "separators": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "separatorInvertBackground": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "startCaps": [
+      ""
+    ],
+    "endCaps": [
+      ""
+    ],
+    "theme": "onedark",
+    "autoAlign": true,
+    "continueThemeAcrossLines": true
+  }
+}

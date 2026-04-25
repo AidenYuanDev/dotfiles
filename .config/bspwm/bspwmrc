@@ -30,6 +30,7 @@ pgrep -x fcitx5 >/dev/null || fcitx5 &
 pgrep -x Snipaste >/dev/null || Snipaste &
 pgrep -x kdeconnect-indicator >/dev/null || kdeconnect-indicator &
 pgrep -x sunshine >/dev/null || sunshine &
+pgrep -x deskflow >/dev/null || deskflow &>/dev/null &
 
 # ============================================================
 # Window Beautification

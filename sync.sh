@@ -16,6 +16,7 @@ BACKUP_ITEMS=(
     ".local/share/fcitx5"
     ".config/scripts"
     ".Xresources"
+    ".config/ccstatusline" 
 )
 
 for item in "${BACKUP_ITEMS[@]}"; do
