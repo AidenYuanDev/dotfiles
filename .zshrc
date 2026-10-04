@@ -46,3 +46,6 @@ cmake() {
     command cmake "$@"
   fi
 }
+
+# Created by `pipx` on 2026-07-04 03:07:33
+export PATH="$PATH:/home/aiden/.local/bin"

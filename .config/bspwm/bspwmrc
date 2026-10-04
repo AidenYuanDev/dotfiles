@@ -10,6 +10,7 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor DP-0 --remove
 xrandr --output DP-0 --off 
 xrandr --output DP-2 --primary --mode 2560x1600 --rate 240
+# xrandr --output DP-2 --primary --mode 3840x2160 --rate 60
 
 # Desktop workspaces
 bspc monitor DP-2 -d I II III IV V

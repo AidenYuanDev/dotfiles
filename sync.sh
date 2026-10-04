@@ -4,33 +4,34 @@ SOURCE_DIR="$HOME"
 DEST_DIR="$(realpath "$(dirname "$0")")"
 
 BACKUP_ITEMS=(
-    ".config/alacritty"
-    ".config/kitty"
-    ".config/bspwm"
-    ".config/picom"
-    ".config/polybar"
-    ".config/rofi"
-    ".config/sxhkd"
-    ".config/fcitx5/conf/classicui.conf"
-    ".zshrc"
-    ".local/share/fcitx5"
-    ".config/scripts"
-    ".Xresources"
-    ".config/ccstatusline" 
+  ".config/alacritty"
+  ".config/kitty"
+  ".config/bspwm"
+  ".config/picom"
+  ".config/polybar"
+  ".config/rofi"
+  ".config/sxhkd"
+  ".config/fcitx5/conf/classicui.conf"
+  ".zshrc"
+  ".zshenv"
+  ".local/share/fcitx5"
+  ".config/scripts"
+  ".Xresources"
+  ".config/ccstatusline"
 )
 
 for item in "${BACKUP_ITEMS[@]}"; do
-    src="$SOURCE_DIR/$item"
-    dest="$DEST_DIR/$item"
-    
-    if [ -e "$src" ]; then
-        echo "  ✓ Copying: $item"
-        mkdir -p "$(dirname "$dest")"
-        rm -rf "$dest"
-        cp -r "$src" "$dest"
-    else
-        echo "  ⚠ Not found: $item"
-    fi
+  src="$SOURCE_DIR/$item"
+  dest="$DEST_DIR/$item"
+
+  if [ -e "$src" ]; then
+    echo "  ✓ Copying: $item"
+    mkdir -p "$(dirname "$dest")"
+    rm -rf "$dest"
+    cp -r "$src" "$dest"
+  else
+    echo "  ⚠ Not found: $item"
+  fi
 done
 
 echo ""
